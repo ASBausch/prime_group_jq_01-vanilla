@@ -56,5 +56,22 @@ header {
 
 }
 
+button:hover {
+	background-color: yellow;
+}
+
+.buyApple {
+	margin: 0px 0px 0px 71px;
+
+}
+
+.buyOrange {
+	margin: 0px 64px 0px 127px;
+
+}
+.wrapper {
+	
+}
+
 
 
