@@ -7,21 +7,25 @@ $(function(){
 	var totalCash = 10000;
 /*Variables for current price of fruits*/
 	var applesPrice = 300;
-	var bananas = 300;
-	var oranges = 300;
-	var grapes = 300;
-
-	var bananas = 300;
-	var oranges = 300;
-	var grapes = 300;
+	var bananasPrice = 300;
+	var orangesPrice = 300;
+	var grapesPrice = 300;
 
 	var totalCashApples =0;
-	var avgApplePrice=0;
-	var countApple=0;
+	var avgApplesPrice=0;
+	var countApples=0;
 
-	var totalOrange =0;
-	var avgOrange=0;
-	var countOrange=0;
+	var totalCashOranges =0;
+	var avgOrangesPrice=0;
+	var countOranges=0;
+
+	var totalCashBananas =0;
+	var avgBananasPrice=0;
+	var countBananas=0;
+
+	var totalCashGrapes =0;
+	var avgGrapesPrice=0;
+	var countGrapes=0;
 
 
 /*Interval function for updating the price of Apples*/
@@ -52,10 +56,13 @@ $(function(){
 		}	
 		/*calls function and sets value of apples*/
 		applesPrice = priceCheck(updateFruit(applesPrice));
-		bananas = priceCheck(updateFruit(bananas));
-		oranges = priceCheck(updateFruit(oranges));
-		grapes = priceCheck(updateFruit(grapes));
-		$('p.apple').text('Current Price = $' + (applesPrice / 100).toFixed(2));
+		bananasPrice = priceCheck(updateFruit(bananasPrice));
+		orangesPrice = priceCheck(updateFruit(orangesPrice));
+		grapesPrice = priceCheck(updateFruit(grapesPrice));
+		$('p.apples').text('Current Price = $' + (applesPrice / 100).toFixed(2));
+		$('p.oranges').text('Current Price = $' + (orangesPrice / 100).toFixed(2));
+		$('p.bananas').text('Current Price = $' + (bananasPrice / 100).toFixed(2));
+		$('p.grapes').text('Current Price = $' + (grapesPrice / 100).toFixed(2));
 
 		/*console.log(apples/100);
 		console.log(bananas/100);
@@ -68,21 +75,66 @@ $(function(){
 	$('.buyApple').on('click', function(){
 		totalCash -= applesPrice;
 		/* increases apple count */
-		countApple ++;
+		countApples ++;
 		/* total cash spent on apples */
 		totalCashApples += applesPrice;
 		/* setting average price of purchased apples */
-		avgApplePrice = (totalCashApples/countApple);
+		avgApplesPrice = (totalCashApples/countApples);
 		/* Updates total cash available after every click*/
 		$('span').text((totalCash / 100).toFixed(2));
 		/*Updates average apple price after every click*/
-		$('.avgApplePrice').text("Average Price $" + (avgApplePrice/ 100).toFixed(2));
+		$('.avgApplesPrice').text("Average Price $" + (avgApplesPrice/ 100).toFixed(2));
 		/*Updates number of apples purchased*/
-		$('.appleCount').text("Apple Count: " + countApple);
+		$('.applesCount').text("Apple Count: " + countApples);
 	});
-
-	
-	
+	/*purchases orange, removes money from current cash*/
+	$('.buyOrange').on('click', function(){
+		totalCash -= orangesPrice;
+		/* increases apple count */
+		countOranges ++;
+		/* total cash spent on apples */
+		totalCashOranges += orangesPrice;
+		/* setting average price of purchased apples */
+		avgOrangesPrice = (totalCashOranges/countOranges);
+		/* Updates total cash available after every click*/
+		$('span').text((totalCash / 100).toFixed(2));
+		/*Updates average apple price after every click*/
+		$('.avgOrangesPrice').text("Average Price $" + (avgOrangesPrice/ 100).toFixed(2));
+		/*Updates number of apples purchased*/
+		$('.orangesCount').text("Orange Count: " + countOranges);
+	});
+	/*purchases banana, removes money from current cash*/
+	$('.buyBanana').on('click', function(){
+		totalCash -= bananasPrice;
+		/* increases apple count */
+		countBananas ++;
+		/* total cash spent on apples */
+		totalCashBananas += bananasPrice;
+		/* setting average price of purchased apples */
+		avgBananasPrice = (totalCashBananas/countBananas);
+		/* Updates total cash available after every click*/
+		$('span').text((totalCash / 100).toFixed(2));
+		/*Updates average apple price after every click*/
+		$('.avgBananasPrice').text("Average Price $" + (avgBananasPrice/ 100).toFixed(2));
+		/*Updates number of apples purchased*/
+		$('.bananasCount').text("Banana Count: " + countBananas);
+	});
+	/*purchases grapes, removes money from current cash*/
+	$('.buyGrapes').on('click', function(){
+		totalCash -= grapesPrice;
+		/* increases apple count */
+		countGrapes ++;
+		/* total cash spent on apples */
+		totalCashGrapes += grapesPrice;
+		/* setting average price of purchased apples */
+		avgGrapesPrice = (totalCashGrapes/countGrapes);
+		/* Updates total cash available after every click*/
+		$('span').text((totalCash / 100).toFixed(2));
+		/*Updates average apple price after every click*/
+		$('.avgGrapesPrice').text("Average Price $" + (avgGrapesPrice/ 100).toFixed(2));
+		/*Updates number of apples purchased*/
+		$('.grapesCount').text("Grapes Count: " + countGrapes);
+	});
 	
 }); 
 
