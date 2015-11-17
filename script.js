@@ -55,6 +55,7 @@ $(function(){
 		bananas = priceCheck(updateFruit(bananas));
 		oranges = priceCheck(updateFruit(oranges));
 		grapes = priceCheck(updateFruit(grapes));
+		$('p.apple').text('current price = $' + (applesPrice / 100).toFixed(2));
 
 		/*console.log(apples/100);
 		console.log(bananas/100);
