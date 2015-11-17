@@ -6,10 +6,24 @@ $(function(){
 /*Customer total cash available*/
 	var totalCash = 100;
 /*Variables for current price of fruits*/
-	var apples = 300;
+	var applesPrice = 300;
 	var bananas = 300;
 	var oranges = 300;
 	var grapes = 300;
+
+	var bananas = 300;
+	var oranges = 300;
+	var grapes = 300;
+
+	var totalCashApples =0;
+	var avgApplePrice=0;
+	var countApple=0;
+
+	var totalOrange =0;
+	var avgOrange=0;
+	var countOrange=0;
+
+
 /*Interval function for updating the price of Apples*/
 	setInterval( function() {
 		
@@ -37,17 +51,32 @@ $(function(){
 			}
 		}	
 		/*calls function and sets value of apples*/
-		apples = priceCheck(updateFruit(apples));
+		applesPrice = priceCheck(updateFruit(applesPrice));
 		bananas = priceCheck(updateFruit(bananas));
 		oranges = priceCheck(updateFruit(oranges));
 		grapes = priceCheck(updateFruit(grapes));
-​
-		console.log(apples/100);
+
+		/*console.log(apples/100);
 		console.log(bananas/100);
 		console.log(oranges/100);
-		console.log(grapes/100);
-​
-	}, 1500)
+		console.log(grapes/100);*/
+
+	}, 1500);
+
+	/*purchases apple, removes money from current cash*/
+	$('.buyApple').on('click', function(){
+		totalCash -= applesPrice;
+		/* increases apple count */
+		countApple ++;
+		/* total cash spent on apples */
+		totalCashApples += applesPrice;
+		/* setting average price of purchased apples */
+		avgApplePrice = (totalCashApples/countApple);
+		console.log(totalCashApples, avgApplePrice, countApple);
+	});
+
 	
 	
-}) 
+	
+}); 
+
