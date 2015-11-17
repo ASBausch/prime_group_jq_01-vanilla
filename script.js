@@ -4,7 +4,7 @@ $(function(){
 		return Math.floor(Math.random() * (1 + max - min) + min);
 	}
 /*Customer total cash available*/
-	var totalCash = 100;
+	var totalCash = 10000;
 /*Variables for current price of fruits*/
 	var applesPrice = 300;
 	var bananas = 300;
@@ -73,6 +73,7 @@ $(function(){
 		/* setting average price of purchased apples */
 		avgApplePrice = (totalCashApples/countApple);
 		console.log(totalCashApples, avgApplePrice, countApple);
+		$('span').text(totalCash / 100);
 	});
 
 	
