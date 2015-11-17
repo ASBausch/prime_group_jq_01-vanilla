@@ -69,7 +69,7 @@ $(function(){
 		console.log(oranges/100);
 		console.log(grapes/100);*/
 
-	}, 1500);
+	}, 15000);
 
 	/*purchases apple, removes money from current cash*/
 	$('.buyApple').on('click', function(){
