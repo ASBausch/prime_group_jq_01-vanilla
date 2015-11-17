@@ -55,7 +55,7 @@ $(function(){
 		bananas = priceCheck(updateFruit(bananas));
 		oranges = priceCheck(updateFruit(oranges));
 		grapes = priceCheck(updateFruit(grapes));
-		$('p.apple').text('current price = $' + (applesPrice / 100).toFixed(2));
+		$('p.apple').text('Current Price = $' + (applesPrice / 100).toFixed(2));
 
 		/*console.log(apples/100);
 		console.log(bananas/100);
@@ -73,8 +73,12 @@ $(function(){
 		totalCashApples += applesPrice;
 		/* setting average price of purchased apples */
 		avgApplePrice = (totalCashApples/countApple);
-		console.log(totalCashApples, avgApplePrice, countApple);
-		$('span').text(totalCash / 100);
+		/* Updates total cash available after every click*/
+		$('span').text((totalCash / 100).toFixed(2));
+		/*Updates average apple price after every click*/
+		$('.avgApplePrice').text("Average Price $" + (avgApplePrice/ 100).toFixed(2));
+		/*Updates number of apples purchased*/
+		$('.appleCount').text("Apple Count: " + countApple);
 	});
 
 	
